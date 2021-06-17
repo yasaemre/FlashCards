@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WalkthroughView:View {
     @AppStorage("currentPage") var currentPage = 1
+    
     var body: some View {
         
         //Slide animation
@@ -46,7 +47,7 @@ struct WalkthroughView:View {
         }, label: {
             Image(systemName: "chevron.right")
                 .font(.system(size: 20, weight: .semibold))
-                .foregroundColor(.blue)
+                .foregroundColor(Color.init(hex: "5A80E1"))
                 .frame(width: 60, height: 60)
                 .background(Color.white)
                 .clipShape(Circle())
@@ -72,79 +73,6 @@ struct WalkthroughView:View {
     }
 }
 
-struct ScreenView: View {
-    
-    var image: String
-    var title: String
-    var detail: String
-    @AppStorage("currentPage") var currentPage = 1
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            
-            HStack {
-
-                if currentPage == 1 {
-//                    Text("Hello Member!")
-//                        .font(.title)
-//                        .fontWeight(.semibold)
-//                        .kerning(1.4)
-//                        .foregroundColor(.blue)
-                } else {
-                    //Back Button
-                    Button(action: {
-                        withAnimation(.easeInOut) {
-                            currentPage -= 1
-                        }
-                    }, label:{
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.white)
-                            .padding(.vertical,10)
-                            .padding(.horizontal)
-                            .background(Color.black.opacity(0.4))
-                            .cornerRadius(10)
-                        
-                    })
-                
-                }
-                Spacer()
-                
-                Button(action: {
-                    withAnimation(.easeInOut){
-                        currentPage = 5
-                    }
-                }) {
-                    Text("Skip")
-                        .foregroundColor(.gray)
-                        .fontWeight(.semibold)
-                        .kerning(1.2)
-                }
-            }
-            .foregroundColor(.white)
-            .padding()
-            
-            
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            Text(title)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.blue)
-                .padding(.top)
-            
-            Text(detail)
-                .fontWeight(.semibold)
-                .kerning(1.1)
-                .multilineTextAlignment(.center)
-                .padding()
-            
-            //Min spacing when Phone is reducing
-            Spacer(minLength: 120)
-        }
-    }
-}
 
 
 //total pages
