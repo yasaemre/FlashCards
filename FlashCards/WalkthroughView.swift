@@ -57,11 +57,11 @@ struct WalkthroughView:View {
                     ZStack{
                     
                     Circle()
-                        .stroke(Color.black.opacity(0.4), lineWidth: 4)
+                        .stroke(Color.gray.opacity(0.4), lineWidth: 4)
                         
                     Circle()
                         .trim(from: 0, to: CGFloat(currentPage) / CGFloat(totalPages))
-                        .stroke(Color.white, lineWidth: 4)
+                        .stroke(Color.init(hex: "5A80E1"), lineWidth: 4)
                         .rotationEffect(.init(degrees: -90))
                 }
                         .padding(-15)
