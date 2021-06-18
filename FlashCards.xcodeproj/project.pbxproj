@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		C60D996B267C0C6000A17F66 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996A267C0C6000A17F66 /* ScreenView.swift */; };
 		C60D996E267C138A00A17F66 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996D267C138A00A17F66 /* ColorExtention.swift */; };
+		C60D9970267C192F00A17F66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996F267C192F00A17F66 /* LoginView.swift */; };
 		C634CF81267960D5002797B9 /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF80267960D5002797B9 /* FlashCardsApp.swift */; };
 		C634CF83267960D5002797B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF82267960D5002797B9 /* ContentView.swift */; };
 		C634CF85267960D7002797B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF84267960D7002797B9 /* Assets.xcassets */; };
 		C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF87267960D7002797B9 /* Preview Assets.xcassets */; };
-		C634CF8F2679B985002797B9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF8E2679B985002797B9 /* HomeView.swift */; };
 		C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF902679BA41002797B9 /* WalkthroughView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C60D996A267C0C6000A17F66 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 		C60D996D267C138A00A17F66 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
+		C60D996F267C192F00A17F66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C634CF7D267960D5002797B9 /* FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C634CF80267960D5002797B9 /* FlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsApp.swift; sourceTree = "<group>"; };
 		C634CF82267960D5002797B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C634CF84267960D7002797B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C634CF87267960D7002797B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C634CF8E2679B985002797B9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C634CF902679BA41002797B9 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,8 +70,8 @@
 			children = (
 				C634CF80267960D5002797B9 /* FlashCardsApp.swift */,
 				C634CF82267960D5002797B9 /* ContentView.swift */,
-				C634CF8E2679B985002797B9 /* HomeView.swift */,
 				C634CF902679BA41002797B9 /* WalkthroughView.swift */,
+				C60D996F267C192F00A17F66 /* LoginView.swift */,
 				C60D996A267C0C6000A17F66 /* ScreenView.swift */,
 				C634CF84267960D7002797B9 /* Assets.xcassets */,
 				C634CF86267960D7002797B9 /* Preview Content */,
@@ -158,7 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C60D996E267C138A00A17F66 /* ColorExtention.swift in Sources */,
-				C634CF8F2679B985002797B9 /* HomeView.swift in Sources */,
+				C60D9970267C192F00A17F66 /* LoginView.swift in Sources */,
 				C634CF83267960D5002797B9 /* ContentView.swift in Sources */,
 				C634CF81267960D5002797B9 /* FlashCardsApp.swift in Sources */,
 				C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */,

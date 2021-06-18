@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("currentPage") var currentPage = 1
-    private var homeView = HomeView()
+    private var loginView = LoginView()
     private var walkthrough = WalkthroughView()
     var body: some View {
         if currentPage > totalPages{
-            homeView
+            loginView
         } else {
             walkthrough
         }
