@@ -108,8 +108,10 @@ struct LoginView: View {
                     VStack {
                         if self.isVisible {
                             TextField("Password", text: self.$pass)
+                                .autocapitalization(.none)
                         } else {
                             SecureField("Password", text: self.$pass)
+                                .autocapitalization(.none)
                         }
                     }
                     .foregroundColor(.white)
@@ -129,7 +131,7 @@ struct LoginView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        self.reset()
                     }) {
                         Text("Forget password")
                             .fontWeight(.bold)
@@ -180,6 +182,7 @@ struct LoginView: View {
             )
         if self.alert {
             ErrorView(alert: self.$alert, error: self.$error)
+                .font(.system(size: 14))
                 .frame(width: 300, height: 150, alignment: .center)
                 .opacity(0.9)
         }
@@ -192,8 +195,8 @@ struct LoginView: View {
     func verify() {
         if self.email != "" && self.pass != "" {
             Auth.auth().signIn(withEmail: self.email, password: self.pass) { res, error in
-                if let error = error {
-                    self.error = error.localizedDescription
+                if error != nil {
+                    self.error = error!.localizedDescription
                     self.alert.toggle()
                     return
                 }
@@ -202,6 +205,25 @@ struct LoginView: View {
             }
         } else {
             self.error = "Please fill all the contents properly"
+            self.alert.toggle()
+        }
+        
+    }
+    
+    func reset() {
+        if self.email != "" {
+            Auth.auth().sendPasswordReset(withEmail: self.email) { error in
+                if let error = error {
+                    self.error = error.localizedDescription
+                    self.alert.toggle()
+                    return
+                }
+                
+                self.error = "RESET"
+                self.alert.toggle()
+            }
+        } else {
+            self.error = "Email ID is empty"
             self.alert.toggle()
         }
         

@@ -30,10 +30,10 @@ struct SignUpView : View {
                         
                     
                     GeometryReader { geo in
-                        Image("signUp")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: geo.size.width, height:geo.size.height)
+                            Image("signUp")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geo.size.width, height:geo.size.height)
                     }
                     Spacer()
                         
@@ -124,12 +124,19 @@ struct SignUpView : View {
                         }
                         .background(Color("Color"))
                         .cornerRadius(10)
-                        .padding(.bottom, 15)
-                        Spacer()
+                        .padding(.top, 15)
+                        
                     }
                     .padding(.horizontal, 25)
                 
                 
+                    
+                
+                
+        
+                //.navigationBarBackButtonHidden(true)
+            
+            
                 Button(action: {
                     
                     self.show.toggle()
@@ -140,25 +147,26 @@ struct SignUpView : View {
                         .font(.title)
                         .foregroundColor(Color("Color"))
                 }
-                //.padding()
-        
-                //.navigationBarBackButtonHidden(true)
-            
-            if self.alert{
-                
-                ErrorView(alert: self.$alert, error: self.$error)
-            }
+                .padding()
+                if self.alert {
+                    Spacer()
+
+                    ErrorView(alert: self.$alert, error: self.$error)
+                }
         }
         .navigationBarBackButtonHidden(true)
+        
+        
     }
-    
+
     func register() {
-        if self.email != "" {
+        if !self.email.isEmpty {
             if self.pass == self.repass {
                 Auth.auth().createUser(withEmail: self.email, password: self.pass) { result, error in
-                    if let error = error {
-                        self.error = error.localizedDescription
+                    if error != nil {
+                        self.error = error!.localizedDescription
                         self.alert.toggle()
+                        return
                     }
                     
                     print("success")
@@ -174,6 +182,7 @@ struct SignUpView : View {
             self.alert.toggle()
         }
     }
+    
 }
 
 struct SignUpView_Previews: PreviewProvider {
