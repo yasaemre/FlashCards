@@ -11,13 +11,13 @@ import Firebase
 
 struct ContentView: View {
     @AppStorage("currentPage") var currentPage = 1
-    //private var loginView = LoginView()
+
     private var walkthrough = WalkthroughView()
     @State var show = false
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-    
+    //@State var appleLogStatus = UserDefaults.standard.value(forKey: "appleLogStatus") as? Bool ?? false
     var body: some View {
-        if currentPage > totalPages{
+        if currentPage > totalPages {
             Home()
         } else {
             walkthrough
@@ -27,15 +27,16 @@ struct ContentView: View {
 struct Home : View {
     
     @State var show = false
+    @AppStorage("appleLogStatus") var appleLogStatus = false
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-    
+
     var body: some View{
         
         NavigationView{
             
             VStack{
                 
-                if self.status{
+                if self.status || self.appleLogStatus{
                     
                     Homescreen()
                 }
@@ -62,6 +63,11 @@ struct Home : View {
                     
                     self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
                 }
+                
+                NotificationCenter.default.addObserver(forName: NSNotification.Name("appleLogStatus"), object: nil, queue: .main) { (_) in
+                    
+                    self.appleLogStatus = UserDefaults.standard.value(forKey: "appleLogStatus") as? Bool ?? false
+                }
             }
         }
     }
@@ -82,7 +88,9 @@ struct Homescreen : View {
                 
                 try! Auth.auth().signOut()
                 UserDefaults.standard.set(false, forKey: "status")
+                UserDefaults.standard.set(false, forKey: "appleLogStatus")
                 NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("appleLogStatus"), object: nil)
                 
             }) {
                 
@@ -102,11 +110,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-//
-
-
-
-
-
 

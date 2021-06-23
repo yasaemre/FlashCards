@@ -18,6 +18,8 @@
 		C634CF85267960D7002797B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF84267960D7002797B9 /* Assets.xcassets */; };
 		C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF87267960D7002797B9 /* Preview Assets.xcassets */; };
 		C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF902679BA41002797B9 /* WalkthroughView.swift */; };
+		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
+		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
 		E32BDA8CA7F6562C8CDBC468 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		C634CF84267960D7002797B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C634CF87267960D7002797B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C634CF902679BA41002797B9 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
+		C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C64FB3AF26829FC0008FFC9E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C65D7758267DB9240066E570 /* FlashCards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashCards.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32BDA8CA7F6562C8CDBC468 /* Pods_FlashCards.framework in Frameworks */,
+				C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,7 @@
 		867370FFA496033B1CF2647E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C64FB3AF26829FC0008FFC9E /* CloudKit.framework */,
 				5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */,
 			);
 			name = Frameworks;
@@ -80,6 +86,7 @@
 		C634CF74267960D5002797B9 = {
 			isa = PBXGroup;
 			children = (
+				C64FB3AC268296BA008FFC9E /* ViewModel */,
 				C60D996C267C137100A17F66 /* Extention */,
 				C634CF7F267960D5002797B9 /* FlashCards */,
 				C634CF7E267960D5002797B9 /* Products */,
@@ -120,6 +127,14 @@
 				C634CF87267960D7002797B9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C64FB3AC268296BA008FFC9E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +260,7 @@
 				C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */,
 				C60D996B267C0C6000A17F66 /* ScreenView.swift in Sources */,
 				C60A3F25267D583F009893A5 /* ErrorView.swift in Sources */,
+				C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
@@ -393,6 +410,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = emreyasa.FlashCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
@@ -425,6 +444,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = emreyasa.FlashCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

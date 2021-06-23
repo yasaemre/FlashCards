@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import AuthenticationServices
 
 struct LoginView: View {
     
@@ -17,6 +18,8 @@ struct LoginView: View {
     @Binding var show:Bool
     @State var alert = false
     @State var error = ""
+    
+    @StateObject var loginData = LoginViewModel()
     
     var body: some View {
 
@@ -31,26 +34,67 @@ struct LoginView: View {
                     }
                     Spacer()
 
-                    Button(action: {
-                        print("Apple button was tapped")
-                    }) {
-                        HStack(spacing: 40) {
-                            Image("apple")
-                                .resizable()
-                                .frame(width: 32.0, height: 32.0)
-                                
-                                Text("Continue with Apple")
-                                    .fontWeight(.semibold)
-                                    .multilineTextAlignment(.trailing)
+//                Button(action: {
+//                    print("Apple button was tapped")
+//                    SignInWithAppleButton { request in
+//                        //requesting parameters from Apple login
+//                        loginData.nonce = loginData.randomNonceString(length: 10)
+//                        request.requestedScopes = [.email, .fullName]
+//                        request.nonce = loginData.sha256(loginData.nonce)
+//                    } onCompletion: { result in
+//                        switch result {
+//                        case .success(let user):
+//                            print("Success")
+//                            guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+//                                print("error with Firabase")
+//                                return
+//                            }
+//                            loginData.authenticate(credential: credential)
+//                        case .failure(let error):
+//                            print(error.localizedDescription)
+//                        }
+//                    }
+//                }) {
+//                        HStack(spacing: 40) {
+//                            Image("apple")
+//                                .resizable()
+//                                .frame(width: 32.0, height: 32.0)
+//
+//                                Text("Continue with Apple")
+//                                    .fontWeight(.semibold)
+//                                    .multilineTextAlignment(.trailing)
+//                        }
+//
+//                    }
+//                    .frame(width: 300, height: 50, alignment: .center)
+//                    .background(Color.white)
+//                    .foregroundColor(.black)
+//                    .border(Color.white, width: 2)
+//                    .cornerRadius(25)
+                SignInWithAppleButton { request in
+                    //requesting parameters from Apple login
+                    loginData.nonce = loginData.randomNonceString(length: 10)
+                    request.requestedScopes = [.email, .fullName]
+                    request.nonce = loginData.sha256(loginData.nonce)
+                } onCompletion: { result in
+                    switch result {
+                    case .success(let user):
+                        print("Success")
+                        guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+                            print("error with Firabase")
+                            return
                         }
-                        
+                        loginData.authenticate(credential: credential)
+                    case .failure(let error):
+                        print(error.localizedDescription)
                     }
-                    .frame(width: 300, height: 50, alignment: .center)
-                    .background(Color.white)
-                    .foregroundColor(.black)
-                    .border(Color.white, width: 2)
-                    .cornerRadius(25)
-                    
+                }
+
+                .signInWithAppleButtonStyle(.whiteOutline)
+                .frame(width: 300, height: 50, alignment: .center)
+                .clipShape(Capsule())
+                .padding(.horizontal, 30)
+                
                 
                 Button(action: {
                     print("Google button was tapped")
