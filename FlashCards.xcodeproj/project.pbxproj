@@ -20,7 +20,7 @@
 		C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF902679BA41002797B9 /* WalkthroughView.swift */; };
 		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
 		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
-		E32BDA8CA7F6562C8CDBC468 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
+		C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E32BDA8CA7F6562C8CDBC468 /* Pods_FlashCards.framework in Frameworks */,
+				C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */,
 				C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +155,8 @@
 			dependencies = (
 			);
 			name = FlashCards;
+			packageProductDependencies = (
+			);
 			productName = FlashCards;
 			productReference = C634CF7D267960D5002797B9 /* FlashCards.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +185,8 @@
 				Base,
 			);
 			mainGroup = C634CF74267960D5002797B9;
+			packageReferences = (
+			);
 			productRefGroup = C634CF7E267960D5002797B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,6 +304,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -321,6 +326,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -361,6 +367,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -376,6 +383,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -389,7 +397,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
+				CODE_SIGN_ENTITLEMENTS = "FlashCards/FlashCards'.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -397,6 +406,7 @@
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -423,7 +433,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
+				CODE_SIGN_ENTITLEMENTS = "FlashCards/FlashCards'.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -431,6 +442,7 @@
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
