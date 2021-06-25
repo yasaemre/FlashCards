@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Firebase
+//import FBSDKLoginKit
+
 
 
 struct ContentView: View {
@@ -30,13 +32,16 @@ struct Home : View {
     @AppStorage("appleLogStatus") var appleLogStatus = false
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
 
+    @AppStorage("fbLogged") var fbLogged = false
+    @AppStorage("fbEmail") var fbEmail = ""
+    
     var body: some View{
         
         NavigationView{
             
             VStack{
                 
-                if self.status || self.appleLogStatus{
+                if self.status || self.appleLogStatus || self.fbLogged{
                     
                     Homescreen()
                 }
@@ -68,6 +73,11 @@ struct Home : View {
                     
                     self.appleLogStatus = UserDefaults.standard.value(forKey: "appleLogStatus") as? Bool ?? false
                 }
+                
+                NotificationCenter.default.addObserver(forName: NSNotification.Name("fbLogged"), object: nil, queue: .main) { (_) in
+                                    
+                                    self.fbLogged = UserDefaults.standard.value(forKey: "fbLogged") as? Bool ?? false
+                                }
             }
         }
     }
@@ -75,22 +85,28 @@ struct Home : View {
 
 struct Homescreen : View {
     
+    @AppStorage("fbLogged") var fbLogged = false
+    @AppStorage("fbEmail") var fbEmail = ""
+    
     var body: some View{
         
         VStack{
             
-            Text("Logged successfully")
+            Text(fbLogged ? "\(fbEmail) succefully done." : "other login is done.")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black.opacity(0.7))
             
             Button(action: {
-                
+
                 try! Auth.auth().signOut()
                 UserDefaults.standard.set(false, forKey: "status")
                 UserDefaults.standard.set(false, forKey: "appleLogStatus")
+                UserDefaults.standard.set(false, forKey: "fbLogged")
+
                 NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
                 NotificationCenter.default.post(name: NSNotification.Name("appleLogStatus"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("fbLogged"), object: nil)
                 
             }) {
                 

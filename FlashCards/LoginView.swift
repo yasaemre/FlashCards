@@ -22,6 +22,9 @@ struct LoginView: View {
     
     @StateObject var loginData = LoginViewModel()
     
+    @AppStorage("fbLogged") var fbLogged = false
+    @AppStorage("fbEmail") var fbEmail = ""
+    
     var body: some View {
 
             Color.init(hex: "5A80E1").ignoresSafeArea()
@@ -90,11 +93,8 @@ struct LoginView: View {
                         print(error.localizedDescription)
                     }
                 }
-
-                .signInWithAppleButtonStyle(.whiteOutline)
                 .frame(width: 300, height: 50, alignment: .center)
                 .clipShape(Capsule())
-                .padding(.horizontal, 30)
                 
                 
                 Button(action: {
@@ -105,7 +105,7 @@ struct LoginView: View {
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
                             
-                            Text("Continue with Apple")
+                            Text("Continue with Google")
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.trailing)
                     }
@@ -117,8 +117,12 @@ struct LoginView: View {
                 .border(Color.white, width: 2)
                 .cornerRadius(25)
                 
-                login()
+                FBLoginView()
                     .frame(width: 300, height: 50, alignment: .center)
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                    .cornerRadius(25)
+                
 //                Button(action: {
 //                    print("Facebook button was tapped")
 //                }) {
@@ -278,26 +282,27 @@ struct LoginView: View {
 
 }
 
-struct login: UIViewRepresentable {
-    
-    func makeCoordinator() -> login.Coordinator {
+struct FBLoginView: UIViewRepresentable {
+
+    func makeCoordinator() -> FBLoginView.Coordinator {
         
-        return login.Coordinator()
+        return FBLoginView.Coordinator()
     }
 
-    func makeUIView(context: UIViewRepresentableContext<login>) -> FBLoginButton {
+    func makeUIView(context: UIViewRepresentableContext<FBLoginView>) -> FBLoginButton {
         let button = FBLoginButton()
         button.delegate = context.coordinator
-        button.permissions = ["email"]
+        button.permissions = ["email", "public_profile"]
         return button
     }
     
-    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<login>) {
+    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<FBLoginView>) {
         
     }
     
     class Coordinator: NSObject, LoginButtonDelegate {
-        
+        @AppStorage("fbLogged") var fbLogged = false
+
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
             if error != nil {
                 print(error!.localizedDescription)
@@ -313,7 +318,7 @@ struct login: UIViewRepresentable {
                         print(err!.localizedDescription)
                         return
                     }
-                    
+                    self.fbLogged = true
                     print("success fb login")
                 }
             }
@@ -326,8 +331,8 @@ struct login: UIViewRepresentable {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(show: .constant(false))
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView(show: .constant(false))
+//    }
+//}
