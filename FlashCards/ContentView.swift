@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Firebase
-//import FBSDKLoginKit
 
 
 
@@ -31,10 +30,10 @@ struct Home : View {
     @State var show = false
     @AppStorage("appleLogStatus") var appleLogStatus = false
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-
+    
     @AppStorage("fbLogged") var fbLogged = false
     @AppStorage("fbEmail") var fbEmail = ""
-    
+
     var body: some View{
         
         NavigationView{
@@ -51,7 +50,7 @@ struct Home : View {
                         
                         NavigationLink(destination: SignUpView(show: self.$show), isActive: self.$show) {
                             
-                            Text("")
+                            Text("Facebook email: \(fbEmail)")
                         }
                         .hidden()
                         
@@ -78,21 +77,31 @@ struct Home : View {
                                     
                                     self.fbLogged = UserDefaults.standard.value(forKey: "fbLogged") as? Bool ?? false
                                 }
+
+                    
+                    self.fbLogged = UserDefaults.standard.value(forKey: "fbLogged") as? Bool ?? false
+                }
+
+
             }
         }
     }
 }
 
 struct Homescreen : View {
+
     
     @AppStorage("fbLogged") var fbLogged = false
     @AppStorage("fbEmail") var fbEmail = ""
     
+
     var body: some View{
         
         VStack{
             
-            Text(fbLogged ? "\(fbEmail) succefully done." : "other login is done.")
+
+            Text(fbLogged ? "FB email: \(fbEmail)" : "Other type of login successfully")
+
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black.opacity(0.7))
@@ -100,6 +109,7 @@ struct Homescreen : View {
             Button(action: {
 
                 try! Auth.auth().signOut()
+                
                 UserDefaults.standard.set(false, forKey: "status")
                 UserDefaults.standard.set(false, forKey: "appleLogStatus")
                 UserDefaults.standard.set(false, forKey: "fbLogged")

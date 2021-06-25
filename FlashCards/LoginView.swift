@@ -117,6 +117,7 @@ struct LoginView: View {
                 .border(Color.white, width: 2)
                 .cornerRadius(25)
                 
+
                 FBLoginView()
                     .frame(width: 300, height: 50, alignment: .center)
                     .background(Color.white)
@@ -142,6 +143,7 @@ struct LoginView: View {
 //                .foregroundColor(.black)
 //                .border(Color.white, width: 2)
 //                .cornerRadius(25)
+
                 
 //                Text("OR")
 //                    .fontWeight(.semibold)
@@ -226,8 +228,6 @@ struct LoginView: View {
                 
             }
                     .padding(.horizontal, 25)
-                
-             
                 
                 
             )

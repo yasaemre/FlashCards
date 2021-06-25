@@ -12,14 +12,22 @@
 		C60D996B267C0C6000A17F66 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996A267C0C6000A17F66 /* ScreenView.swift */; };
 		C60D996E267C138A00A17F66 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996D267C138A00A17F66 /* ColorExtention.swift */; };
 		C60D9970267C192F00A17F66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996F267C192F00A17F66 /* LoginView.swift */; };
-		C634CF81267960D5002797B9 /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF80267960D5002797B9 /* FlashCardsApp.swift */; };
+		C62D3827268666310029245E /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D3826268666310029245E /* WalkthroughView.swift */; };
+		C62D3828268666310029245E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D381E268666310029245E /* ErrorView.swift */; };
+		C62D3829268666310029245E /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D3820268666310029245E /* ScreenView.swift */; };
+		C62D382A268666310029245E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D381F268666310029245E /* LoginView.swift */; };
+		C62D382B268666310029245E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D3822268666310029245E /* ContentView.swift */; };
+		C62D382C268666310029245E /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D3821268666310029245E /* FlashCardsApp.swift */; };
+		C62D382D268666310029245E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D381B268666310029245E /* SignUpView.swift */; };
 		C634CF83267960D5002797B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF82267960D5002797B9 /* ContentView.swift */; };
 		C634CF85267960D7002797B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF84267960D7002797B9 /* Assets.xcassets */; };
 		C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C634CF87267960D7002797B9 /* Preview Assets.xcassets */; };
 		C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF902679BA41002797B9 /* WalkthroughView.swift */; };
+		C63A81E92686648D00E0398A /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF80267960D5002797B9 /* FlashCardsApp.swift */; };
 		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
 		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
 		C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
+
 		C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +41,17 @@
 		C60D996A267C0C6000A17F66 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 		C60D996D267C138A00A17F66 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		C60D996F267C192F00A17F66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C62D381B268666310029245E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C62D381D268666310029245E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C62D381E268666310029245E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		C62D381F268666310029245E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C62D3820268666310029245E /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		C62D3821268666310029245E /* FlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsApp.swift; sourceTree = "<group>"; };
+		C62D3822268666310029245E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C62D3823268666310029245E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C62D3824268666310029245E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C62D3825268666310029245E /* FlashCards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashCards.entitlements; sourceTree = "<group>"; };
+		C62D3826268666310029245E /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		C634CF7D267960D5002797B9 /* FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C634CF80267960D5002797B9 /* FlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsApp.swift; sourceTree = "<group>"; };
 		C634CF82267960D5002797B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +70,7 @@
 			files = (
 				C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */,
 				C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */,
+				C66BDE5E2685A2D8006F187A /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +103,14 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		C62D381C268666310029245E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C62D381D268666310029245E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		C634CF74267960D5002797B9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C652A53E26854C5C001F057E /* FlashCards.entitlements */,
+
 				C634CF80267960D5002797B9 /* FlashCardsApp.swift */,
 				C634CF82267960D5002797B9 /* ContentView.swift */,
 				C634CF902679BA41002797B9 /* WalkthroughView.swift */,
@@ -156,6 +185,7 @@
 			);
 			name = FlashCards;
 			packageProductDependencies = (
+				C66BDE5D2685A2D8006F187A /* FacebookLogin */,
 			);
 			productName = FlashCards;
 			productReference = C634CF7D267960D5002797B9 /* FlashCards.app */;
@@ -186,6 +216,7 @@
 			);
 			mainGroup = C634CF74267960D5002797B9;
 			packageReferences = (
+				C66BDE5C2685A2D8006F187A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = C634CF7E267960D5002797B9 /* Products */;
 			projectDirPath = "";
@@ -258,13 +289,20 @@
 			files = (
 				C60D996E267C138A00A17F66 /* ColorExtention.swift in Sources */,
 				C60D9970267C192F00A17F66 /* LoginView.swift in Sources */,
+				C62D382B268666310029245E /* ContentView.swift in Sources */,
 				C634CF83267960D5002797B9 /* ContentView.swift in Sources */,
+				C62D3827268666310029245E /* WalkthroughView.swift in Sources */,
+				C63A81E92686648D00E0398A /* FlashCardsApp.swift in Sources */,
 				C60A3F23267D30B2009893A5 /* SignUpView.swift in Sources */,
-				C634CF81267960D5002797B9 /* FlashCardsApp.swift in Sources */,
+				C62D3829268666310029245E /* ScreenView.swift in Sources */,
 				C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */,
+				C62D382C268666310029245E /* FlashCardsApp.swift in Sources */,
 				C60D996B267C0C6000A17F66 /* ScreenView.swift in Sources */,
 				C60A3F25267D583F009893A5 /* ErrorView.swift in Sources */,
+				C62D382D268666310029245E /* SignUpView.swift in Sources */,
+				C62D382A268666310029245E /* LoginView.swift in Sources */,
 				C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */,
+				C62D3828268666310029245E /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +342,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
+				CODE_SIGN_ENTITLEMENTS = /Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
@@ -368,7 +407,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
+				CODE_SIGN_ENTITLEMENTS = /Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
@@ -402,6 +442,7 @@
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
 				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
@@ -409,6 +450,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = FlashCards;
+				INFOPLIST_KEY_CFBundleName = FlashCards;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -435,9 +479,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+ 
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
 				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+		
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
@@ -445,6 +491,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = FlashCards;
+				INFOPLIST_KEY_CFBundleName = FlashCards;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -487,6 +536,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C66BDE5C2685A2D8006F187A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C66BDE5D2685A2D8006F187A /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C66BDE5C2685A2D8006F187A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C634CF75267960D5002797B9 /* Project object */;
 }
