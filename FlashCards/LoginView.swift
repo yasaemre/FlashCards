@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import AuthenticationServices
+import FBSDKLoginKit
 
 struct LoginView: View {
     
@@ -20,6 +21,10 @@ struct LoginView: View {
     @State var error = ""
     
     @StateObject var loginData = LoginViewModel()
+    
+    @AppStorage("fbLogged") var fbLogged = false
+    @AppStorage("fbEmail") var fbEmail = ""
+    @State var manager = LoginManager()
     
     var body: some View {
 
@@ -104,7 +109,7 @@ struct LoginView: View {
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
                             
-                            Text("Continue with Apple")
+                            Text("Continue with Google")
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.trailing)
                     }
@@ -117,19 +122,53 @@ struct LoginView: View {
                 .cornerRadius(25)
                 
                 Button(action: {
-                    print("Facebook button was tapped")
-                }) {
-                    HStack(spacing: 40) {
+                    //print("Facebook loggin successful")
+                    //if logged means logging out..
+                    if fbLogged {
+                        manager.logOut()
+                        fbEmail = ""
+                        fbLogged = false
+                    } else {
+                        // logging in user..
+                        // you can give any permissions..
+                        //Reads profile and email
+                        manager.logIn(permissions: ["public_profile", "email"], from: nil) { result, err in
+                            if err != nil {
+                                print(err!.localizedDescription)
+                                return
+                            }
+                            
+                            if !result!.isCancelled {
+                                //logged success
+                                self.fbLogged = true
+                                //Gets user details using FB reques...
+                                
+                                let request = GraphRequest(graphPath: "me", parameters: ["fields":"email"])
+                                request.start { _, res, _ in
+                                    guard let profileData = res as? [String:Any] else { return }
+                                    
+                                    //saving email
+                                    fbEmail = profileData["email"] as! String
+                                }
+
+                            }
+                        }
+                    }
+                    print("\(fbLogged) \(fbEmail)")
+
+                }, label:  {
+                    HStack() {
                         Image("fb")
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
+                            .padding()
                             
-                            Text("Continue with Apple")
+                        Text("Continue with Facebook")
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.trailing)
                     }
                     
-                }
+                })
                 .frame(width: 300, height: 50, alignment: .center)
                 .background(Color.white)
                 .foregroundColor(.black)
@@ -219,8 +258,6 @@ struct LoginView: View {
                 
             }
                     .padding(.horizontal, 25)
-                
-             
                 
                 
             )
