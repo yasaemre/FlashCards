@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C60A3F23267D30B2009893A5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A3F22267D30B2009893A5 /* SignUpView.swift */; };
 		C60A3F25267D583F009893A5 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A3F24267D583F009893A5 /* ErrorView.swift */; };
-		C60A3F27267D5E1C009893A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
 		C60D996B267C0C6000A17F66 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996A267C0C6000A17F66 /* ScreenView.swift */; };
 		C60D996E267C138A00A17F66 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996D267C138A00A17F66 /* ColorExtention.swift */; };
 		C60D9970267C192F00A17F66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D996F267C192F00A17F66 /* LoginView.swift */; };
@@ -20,6 +19,7 @@
 		C634CF912679BA41002797B9 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF902679BA41002797B9 /* WalkthroughView.swift */; };
 		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
 		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
+		C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
 		C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		C634CF902679BA41002797B9 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C64FB3AF26829FC0008FFC9E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		C65D7758267DB9240066E570 /* FlashCards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashCards.entitlements; sourceTree = "<group>"; };
+		C652A53E26854C5C001F057E /* FlashCards.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FlashCards.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		C634CF7F267960D5002797B9 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				C65D7758267DB9240066E570 /* FlashCards.entitlements */,
+				C652A53E26854C5C001F057E /* FlashCards.entitlements */,
 				C634CF80267960D5002797B9 /* FlashCardsApp.swift */,
 				C634CF82267960D5002797B9 /* ContentView.swift */,
 				C634CF902679BA41002797B9 /* WalkthroughView.swift */,
@@ -114,8 +114,8 @@
 				C60A3F22267D30B2009893A5 /* SignUpView.swift */,
 				C60D996A267C0C6000A17F66 /* ScreenView.swift */,
 				C60A3F24267D583F009893A5 /* ErrorView.swift */,
-				C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */,
 				C634CF84267960D7002797B9 /* Assets.xcassets */,
+				C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */,
 				C634CF86267960D7002797B9 /* Preview Content */,
 			);
 			path = FlashCards;
@@ -177,7 +177,7 @@
 				};
 			};
 			buildConfigurationList = C634CF78267960D5002797B9 /* Build configuration list for PBXProject "FlashCards" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -203,7 +203,7 @@
 			files = (
 				C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */,
 				C634CF85267960D7002797B9 /* Assets.xcassets in Resources */,
-				C60A3F27267D5E1C009893A5 /* GoogleService-Info.plist in Resources */,
+				C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +307,7 @@
 				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -370,6 +371,7 @@
 				CODE_SIGN_ENTITLEMENTS = "/Users/emreyasa/Dev/FlashCards/FlashCards/FlashCards'.entitlements";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -397,8 +399,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
-				CODE_SIGN_ENTITLEMENTS = "FlashCards/FlashCards'.entitlements";
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
+				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -433,8 +435,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
-				CODE_SIGN_ENTITLEMENTS = "FlashCards/FlashCards'.entitlements";
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
+				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

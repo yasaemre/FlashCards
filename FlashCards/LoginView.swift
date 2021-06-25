@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import AuthenticationServices
+import FBSDKLoginKit
 
 struct LoginView: View {
     
@@ -116,25 +117,27 @@ struct LoginView: View {
                 .border(Color.white, width: 2)
                 .cornerRadius(25)
                 
-                Button(action: {
-                    print("Facebook button was tapped")
-                }) {
-                    HStack(spacing: 40) {
-                        Image("fb")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                            
-                            Text("Continue with Apple")
-                                .fontWeight(.semibold)
-                                .multilineTextAlignment(.trailing)
-                    }
-                    
-                }
-                .frame(width: 300, height: 50, alignment: .center)
-                .background(Color.white)
-                .foregroundColor(.black)
-                .border(Color.white, width: 2)
-                .cornerRadius(25)
+                login()
+                    .frame(width: 300, height: 50, alignment: .center)
+//                Button(action: {
+//                    print("Facebook button was tapped")
+//                }) {
+//                    HStack(spacing: 40) {
+//                        Image("fb")
+//                            .resizable()
+//                            .frame(width: 32.0, height: 32.0)
+//
+//                            Text("Continue with Apple")
+//                                .fontWeight(.semibold)
+//                                .multilineTextAlignment(.trailing)
+//                    }
+//
+//                }
+//                .frame(width: 300, height: 50, alignment: .center)
+//                .background(Color.white)
+//                .foregroundColor(.black)
+//                .border(Color.white, width: 2)
+//                .cornerRadius(25)
                 
 //                Text("OR")
 //                    .fontWeight(.semibold)
@@ -273,6 +276,54 @@ struct LoginView: View {
         
     }
 
+}
+
+struct login: UIViewRepresentable {
+    
+    func makeCoordinator() -> login.Coordinator {
+        
+        return login.Coordinator()
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<login>) -> FBLoginButton {
+        let button = FBLoginButton()
+        button.delegate = context.coordinator
+        button.permissions = ["email"]
+        return button
+    }
+    
+    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<login>) {
+        
+    }
+    
+    class Coordinator: NSObject, LoginButtonDelegate {
+        
+        func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            if AccessToken.current != nil {
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                
+                Auth.auth().signIn(with: credential) { res, err in
+                    if err != nil {
+                        print(err!.localizedDescription)
+                        return
+                    }
+                    
+                    print("success fb login")
+                }
+            }
+        }
+        
+        func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+            try! Auth.auth().signOut()
+        }
+    
+    }
 }
 
 struct LoginView_Previews: PreviewProvider {
