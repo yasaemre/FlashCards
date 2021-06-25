@@ -82,8 +82,6 @@ struct Home : View {
                     self.fbLogged = UserDefaults.standard.value(forKey: "fbLogged") as? Bool ?? false
                 }
 
-
-            }
         }
     }
 }
