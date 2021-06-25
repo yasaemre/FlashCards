@@ -24,7 +24,6 @@ struct LoginView: View {
     
     @AppStorage("fbLogged") var fbLogged = false
     @AppStorage("fbEmail") var fbEmail = ""
-    @State var manager = LoginManager()
     
     var body: some View {
 
@@ -94,11 +93,8 @@ struct LoginView: View {
                         print(error.localizedDescription)
                     }
                 }
-
-                .signInWithAppleButtonStyle(.whiteOutline)
                 .frame(width: 300, height: 50, alignment: .center)
                 .clipShape(Capsule())
-                .padding(.horizontal, 30)
                 
                 
                 Button(action: {
@@ -121,59 +117,33 @@ struct LoginView: View {
                 .border(Color.white, width: 2)
                 .cornerRadius(25)
                 
-                Button(action: {
-                    //print("Facebook loggin successful")
-                    //if logged means logging out..
-                    if fbLogged {
-                        manager.logOut()
-                        fbEmail = ""
-                        fbLogged = false
-                    } else {
-                        // logging in user..
-                        // you can give any permissions..
-                        //Reads profile and email
-                        manager.logIn(permissions: ["public_profile", "email"], from: nil) { result, err in
-                            if err != nil {
-                                print(err!.localizedDescription)
-                                return
-                            }
-                            
-                            if !result!.isCancelled {
-                                //logged success
-                                self.fbLogged = true
-                                //Gets user details using FB reques...
-                                
-                                let request = GraphRequest(graphPath: "me", parameters: ["fields":"email"])
-                                request.start { _, res, _ in
-                                    guard let profileData = res as? [String:Any] else { return }
-                                    
-                                    //saving email
-                                    fbEmail = profileData["email"] as! String
-                                }
 
-                            }
-                        }
-                    }
-                    print("\(fbLogged) \(fbEmail)")
+                FBLoginView()
+                    .frame(width: 300, height: 50, alignment: .center)
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                    .cornerRadius(25)
+                
+//                Button(action: {
+//                    print("Facebook button was tapped")
+//                }) {
+//                    HStack(spacing: 40) {
+//                        Image("fb")
+//                            .resizable()
+//                            .frame(width: 32.0, height: 32.0)
+//
+//                            Text("Continue with Apple")
+//                                .fontWeight(.semibold)
+//                                .multilineTextAlignment(.trailing)
+//                    }
+//
+//                }
+//                .frame(width: 300, height: 50, alignment: .center)
+//                .background(Color.white)
+//                .foregroundColor(.black)
+//                .border(Color.white, width: 2)
+//                .cornerRadius(25)
 
-                }, label:  {
-                    HStack() {
-                        Image("fb")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                            .padding()
-                            
-                        Text("Continue with Facebook")
-                                .fontWeight(.semibold)
-                                .multilineTextAlignment(.trailing)
-                    }
-                    
-                })
-                .frame(width: 300, height: 50, alignment: .center)
-                .background(Color.white)
-                .foregroundColor(.black)
-                .border(Color.white, width: 2)
-                .cornerRadius(25)
                 
 //                Text("OR")
 //                    .fontWeight(.semibold)
@@ -312,8 +282,57 @@ struct LoginView: View {
 
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(show: .constant(false))
+struct FBLoginView: UIViewRepresentable {
+
+    func makeCoordinator() -> FBLoginView.Coordinator {
+        
+        return FBLoginView.Coordinator()
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<FBLoginView>) -> FBLoginButton {
+        let button = FBLoginButton()
+        button.delegate = context.coordinator
+        button.permissions = ["email", "public_profile"]
+        return button
+    }
+    
+    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<FBLoginView>) {
+        
+    }
+    
+    class Coordinator: NSObject, LoginButtonDelegate {
+        @AppStorage("fbLogged") var fbLogged = false
+
+        func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            if AccessToken.current != nil {
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                
+                Auth.auth().signIn(with: credential) { res, err in
+                    if err != nil {
+                        print(err!.localizedDescription)
+                        return
+                    }
+                    self.fbLogged = true
+                    print("success fb login")
+                }
+            }
+        }
+        
+        func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+            try! Auth.auth().signOut()
+        }
+    
     }
 }
+
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView(show: .constant(false))
+//    }
+//}

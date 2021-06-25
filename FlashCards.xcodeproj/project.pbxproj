@@ -26,8 +26,8 @@
 		C63A81E92686648D00E0398A /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF80267960D5002797B9 /* FlashCardsApp.swift */; };
 		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
 		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
-		C6529326268643060000A995 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
-		C66BDE5E2685A2D8006F187A /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C66BDE5D2685A2D8006F187A /* FacebookLogin */; };
+		C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
+
 		C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +60,7 @@
 		C634CF902679BA41002797B9 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C64FB3AF26829FC0008FFC9E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C652A53E26854C5C001F057E /* FlashCards.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FlashCards.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,17 +134,8 @@
 		C634CF7F267960D5002797B9 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				C62D381C268666310029245E /* Preview Content */,
-				C62D3823268666310029245E /* Assets.xcassets */,
-				C62D3822268666310029245E /* ContentView.swift */,
-				C62D381E268666310029245E /* ErrorView.swift */,
-				C62D3825268666310029245E /* FlashCards.entitlements */,
-				C62D3821268666310029245E /* FlashCardsApp.swift */,
-				C62D3824268666310029245E /* GoogleService-Info.plist */,
-				C62D381F268666310029245E /* LoginView.swift */,
-				C62D3820268666310029245E /* ScreenView.swift */,
-				C62D381B268666310029245E /* SignUpView.swift */,
-				C62D3826268666310029245E /* WalkthroughView.swift */,
+				C652A53E26854C5C001F057E /* FlashCards.entitlements */,
+
 				C634CF80267960D5002797B9 /* FlashCardsApp.swift */,
 				C634CF82267960D5002797B9 /* ContentView.swift */,
 				C634CF902679BA41002797B9 /* WalkthroughView.swift */,
@@ -151,8 +143,8 @@
 				C60A3F22267D30B2009893A5 /* SignUpView.swift */,
 				C60D996A267C0C6000A17F66 /* ScreenView.swift */,
 				C60A3F24267D583F009893A5 /* ErrorView.swift */,
-				C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */,
 				C634CF84267960D7002797B9 /* Assets.xcassets */,
+				C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */,
 				C634CF86267960D7002797B9 /* Preview Content */,
 			);
 			path = FlashCards;
@@ -242,7 +234,7 @@
 			files = (
 				C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */,
 				C634CF85267960D7002797B9 /* Assets.xcassets in Resources */,
-				C6529326268643060000A995 /* GoogleService-Info.plist in Resources */,
+				C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,9 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
-				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
+				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
@@ -486,9 +479,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = Yes;
-				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+ 
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = No;
+				CODE_SIGN_ENTITLEMENTS = FlashCards/FlashCards.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+		
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
