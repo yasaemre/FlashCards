@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,7 @@
 		C63A81E92686648D00E0398A /* FlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634CF80267960D5002797B9 /* FlashCardsApp.swift */; };
 		C64FB3AE268296D8008FFC9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3AD268296D8008FFC9E /* LoginViewModel.swift */; };
 		C64FB3B026829FC0008FFC9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB3AF26829FC0008FFC9E /* CloudKit.framework */; };
-		C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
+		C667B6A02687DB2E00BFD860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C60A3F26267D5E1C009893A5 /* GoogleService-Info.plist */; };
 		C6D943F02684081800AC1D38 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C88845F4FA9E2B74296899C /* Pods_FlashCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,8 +163,6 @@
 			dependencies = (
 			);
 			name = FlashCards;
-			packageProductDependencies = (
-			);
 			productName = FlashCards;
 			productReference = C634CF7D267960D5002797B9 /* FlashCards.app */;
 			productType = "com.apple.product-type.application";
@@ -185,7 +183,7 @@
 				};
 			};
 			buildConfigurationList = C634CF78267960D5002797B9 /* Build configuration list for PBXProject "FlashCards" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -193,8 +191,6 @@
 				Base,
 			);
 			mainGroup = C634CF74267960D5002797B9;
-			packageReferences = (
-			);
 			productRefGroup = C634CF7E267960D5002797B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -211,7 +207,7 @@
 			files = (
 				C634CF88267960D7002797B9 /* Preview Assets.xcassets in Resources */,
 				C634CF85267960D7002797B9 /* Assets.xcassets in Resources */,
-				C652A53F2685599A001F057E /* GoogleService-Info.plist in Resources */,
+				C667B6A02687DB2E00BFD860 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +412,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
@@ -456,6 +453,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCards/Preview Content\"";
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FlashCards/GoogleService-Info.plist";
